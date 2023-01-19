@@ -254,7 +254,6 @@ SELECT * FROM c1 WHERE c1.price = (SELECT MAX(`price`) FROM c1 )
 -- Найдите производителей принтеров, которые производят ПК с наименьшим объемом RAM и с
 -- самым быстрым процессором среди всех ПК, имеющих наименьший объем RAM. Вывести: Maker	
 
-
 SELECT p.`maker` FROM product p INNER JOIN pc ON (p.`model`=pc.`model`) 
 			INNER JOIN product p1 ON (p1.maker = p.`maker`)
  WHERE p1.`type`= 'Printer' AND pc.speed = (SELECT MAX(speed) FROM pc 
